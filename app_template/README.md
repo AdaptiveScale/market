@@ -5,7 +5,9 @@ This is a skeleton for creating your own application bundles for AdaptiveScale C
 Clone this folder structure as a starting point for your own project.
 
 The directory structure is as follows:
-> bin          <-- all your scripts and executables go here
-> img          <-- images assets for your app go here
-> ui           <-- any custom UI elements go here
+```
+/bin           <-- all your scripts and executables go here
+/img           <-- images assets for your app go here
+/ui            <-- any custom UI elements go here
 manifest.json  <-- describes your app and structurew
+```
