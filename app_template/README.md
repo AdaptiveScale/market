@@ -7,7 +7,7 @@ Clone this folder structure as a starting point for your own project.
 The directory structure is as follows:
 ```
 /bin           <-- all your scripts and executables go here
-/img           <-- images assets for your app go here
+/img           <-- image assets for your app go here
 /ui            <-- any custom UI elements go here
-manifest.json  <-- describes your app and structurew
+manifest.json  <-- app structure and metadata
 ```
