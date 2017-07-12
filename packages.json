@@ -1,0 +1,79 @@
+{
+   "apps":[
+      {
+         "package_id":"YYh6r4",
+         "package_version":"0.3",
+         "name":"Spark 2.0",
+         "version":"2.0",
+         "project_site":"http://spark.apache.org/",
+         "title":"Spark 2.0 Standalone",
+         "heading":"Spark 2.0 Standalone",
+         "description":"Standalone version of Spark 2.0 for installation on a single node.",
+         "status":"beta",
+         "author":"AdaptiveScale Inc.",
+         "contact":"support@adaptivescale.com",
+         "license":"Apache",
+         "license_file":"http://market.adaptivescale.com/YYh6r4/license.txt",
+         "location":"http://market.adaptivescale.com/YYh6r4/spark_2.0_beta1.pkg",
+         "icon":"http://market.adaptivescale.com/YYh6r4/logo.png",
+         "requirements":"http://market.adaptivescale.com/YYh6r4/requirements",
+         "sha256":"0741fff7f51adbba8724b6bfeea46b675e1f8a22787f60293c33e9d505ed0dc5",
+         "repo":"http://github.com/adaptivescale/app_bundles/spark_2.0",
+         "tags":[
+            "spark",
+            "2.0",
+            "beta",
+            "standalone"
+         ]
+      },
+      {
+         "package_id":"Q3eR4g",
+         "package_version":"1.0",
+         "name":"Spark 1.6",
+         "version":"1.6",
+         "project_site":"http://spark.apache.org/",
+         "title":"Spark 1.6",
+         "heading":"Spark 1.6",
+         "description":"Spark 1.6 for installation on a distributed cluster.",
+         "status":"supported",
+         "author":"AdaptiveScale Inc.",
+         "contact":"support@adaptivescale.com",
+         "license":"MIT",
+         "license_file":"http://market.adaptivescale.com/Q3eR4g/license.txt",
+         "location":"http://market.adaptivescale.com/Q3eR4g/spark_1.6.pkg",
+         "icon":"http://market.adaptivescale.com/Q3eR4g/logo.png",
+         "requirements":"http://market.adaptivescale.com/Q3eR4g/requirements",
+         "sha256":"0741fff7f51adbba8724b6bfeea46b675e1f8a22787f60293c33e9d505ed0dc5",
+         "repo":"http://github.com/adaptivescale/app_bundles/spark_1.6",
+         "tags":[
+            "spark",
+            "1.6",
+            "cluster"
+         ]
+      },
+      {
+         "package_id":"F95Hds",
+         "package_version":"0.3",
+         "name":"OpenStack",
+         "version":"2.0",
+         "project_site":"https://releases.openstack.org/ocata/",
+         "title":"OpenStack - Ocata",
+         "heading":"OpenStack - Ocata",
+         "description":"OpenStack - Ocata",
+         "status":"supported",
+         "author":"AdaptiveScale Inc.",
+         "contact":"support@adaptivescale.com",
+         "license":"Apache",
+         "license_file":"http://market.adaptivescale.com/F95Hds/license.txt",
+         "location":"http://market.adaptivescale.com/F95Hds/openstack.pkg",
+         "icon":"http://market.adaptivescale.com/F95Hds/logo.png",
+         "requirements":"http://market.adaptivescale.com/F95Hds/requirements",
+         "sha256":"0741fff7f51adbba8724b6bfeea46b675e1f8a22787f60293c33e9d505ed0dc5",
+         "repo":"http://github.com/adaptivescale/app_bundles/openstack_ocata",
+         "tags":[
+            "openstack",
+            "ocata"
+         ]
+      }
+   ]
+}
