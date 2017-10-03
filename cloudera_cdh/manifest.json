@@ -1,0 +1,139 @@
+{
+    "Name": "Cloudera CDH | Cluster",
+    "Version": "5.12",
+    "Title": "Cloudera CDH | 5.12",
+    "Heading": "Cloudera CDH | 5.12",
+    "Description": "*SUPPORTED OS:* CentOS 6, CentOS 7, Ubuntu 14(trusty) & Ubuntu 16(xenial) | This app-bundle will install Cloudera Manager on the <MANAGEMENT_NODE> and its agents on the specified nodes <WORKER_NODE>s, start up your enterprise edition Cloudera trial, sets up an entire cluster <ACM Cluster> consisting of your provisioned <WORKER_NODE>s appliances and then autmatically installs the latest CDH 5 parcel on the <MANAGEMENT_NODE>, following up with a distribution of the CDH 5 parcel via <P2P> directly to each of the <WORKER_NODES> within the pre-defined cluster ! To see the activated parcels across the cluster, navigate with your browser to http://<MACHINE_IP>:7180 and login with the credentials <acm:SCALE42secretly> !",
+    "Logo": "img/logo.png",
+    "Tags": [
+        "Cloudera",
+        "CDH",
+        "cdh 5",
+        "cloudera manager",
+        "parcels",
+        "apache parcels",
+        "big data workflows",
+        "big data"
+    ],
+    "Role": [
+        {
+            "Type": "MANAGEMENT_NODE",
+            "Name": "Cloudera CDH Server Node",
+            "Description": "Cloudera CDH Server Node",
+            "Servers": {
+                "Min": 1,
+                "Max": 1
+            },
+            "Requirements": {
+                "Architecture": "x86_64",
+                "Cores": 1,
+                "Ram": 2048,
+                "Storage": 2048
+            },
+            "Tasks": [
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/0-preconfig-repo.sh",
+                    "tag": "UPDATE-CLOUDERA-REPOS"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/1-cloudera.sh",
+                    "tag": "INSTALL-MYSQL"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/2-cloudera.sh",
+                    "tag": "CONFIG-MYSQL"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/3-cloudera.sh",
+                    "tag": "MYSQL-START-SERVICE-AT-BOOT"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/4-cloudera.sh",
+                    "tag": "MYSQL-CREDENTIALS-plus-JDBC-DRIVER"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/5-install-java-ntp.sh",
+                    "tag": "ORACLE-JDK-plus-NTP"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/6-cloudera.sh",
+                    "tag": "INSTALL-SCM-SERVER-DAEMONS"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/7-cloudera.sh",
+                    "tag": "PREPARE-DATABASE-START-SERVER"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/8-change-default-auth.sh",
+                    "tag": "CHANGE-DEFAULT-AUTH"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/9-autostart-trial.sh",
+                    "tag": "AUTO-START-ENTERPRISE-EDITION-TRIAL-60"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/10-pip-install-CM-API.sh",
+                    "tag": "PIP-CM-API-DOWNLOAD"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/11-download-CDH-parcel.py {{ MANAGEMENT_NODE.IP }} {{ [WORKER_NODE.IP] }}",
+                    "tag": "CLUSTER-CREATION-CDH-5-parcel-DOWNLOAD-DISTRIBUTE"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/12-activate-parcel.py {{ MANAGEMENT_NODE.IP }}",
+                    "tag": "CDH-5-parcel-ACTIVATE-restart-CLUSTER"
+                }
+            ]
+        },
+        {
+            "Type": "WORKER_NODE",
+            "Name": "Cloudera CDH Agent Node",
+            "Description": "Cloudera CDH Agent Node",
+            "Servers": {
+                "Min": 2,
+                "Max": 6
+            },
+            "Requirements": {
+                "Architecture": "x86_64",
+                "Cores": 1,
+                "Ram": 1024,
+                "Storage": 4096
+            },
+            "Tasks": [
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/0-preconfig-repo.sh",
+                    "tag": "UPDATE-CLOUDERA-REPOS"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/5-install-java-ntp.sh",
+                    "tag": "ORACLE-JDK-plus-NTP"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/agents/2-install-agent-daemon.sh",
+                    "tag": "INSTALL-AGENT-plus-DAEMON"
+                },
+                {
+                    "module_name": "script",
+                    "module_args": "{{ SELF }}/bin/{{ DISTRIBUTION }}/{{ MAJOR }}/agents/3-configure-n-start-agents.sh  {{ MANAGEMENT_NODE.IP }}",
+                    "tag": "CONFIGURE-n-START-AGENT"
+                }
+            ]
+        }
+    ]
+}
