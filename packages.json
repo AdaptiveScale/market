@@ -15,7 +15,7 @@
             "repo": "https://github.com/AdaptiveScale/market/tree/master/cassandra_single",
             "package_id": "cassandra_single",
             "version": 3.6,
-            "location": "https://github.com/AdaptiveScale/market/blob/master/packages/cassandra_single_v1.1.pkg",
+            "location": "https://github.com/AdaptiveScale/market/raw/master/packages/cassandra_single_v1.1.pkg",
             "sha256": "344C8F3B597E0B92DD305FB4640885CCCE3C3643D05A662F45627D087F65C3BC",
             "heading": "Cassandra | Single Node",
             "tags": [
@@ -44,7 +44,7 @@
             "repo": "https://github.com/AdaptiveScale/market/tree/master/cassandra_cluster",
             "package_id": "cassandra_cluster",
             "version": 3.6,
-            "location": "https://github.com/AdaptiveScale/market/blob/master/packages/cassandra_cluster_v1.1.pkg",
+            "location": "https://github.com/AdaptiveScale/market/raw/master/packages/cassandra_cluster_v1.1.pkg",
             "sha256": "8BAB3AD0F8071EADA71D271DC615111990318ECC7D6BDDF893FC9E3F35B1D376",
             "heading": "Cassandra | Cluster",
             "tags": [
@@ -73,7 +73,7 @@
             "repo": "https://github.com/AdaptiveScale/market/tree/master/cloudera_cdh",
             "package_id": "cloudera_cdh",
             "version": 5.12,
-            "location": "https://github.com/AdaptiveScale/market/blob/master/packages/cloudera_cdh_v2.0.pkg",
+            "location": "https://github.com/AdaptiveScale/market/raw/master/packages/cloudera_cdh_v2.0.pkg",
             "sha256": "C6441CB5394E60F44B3CDE702FEDCC64502AF7BEED7DC01EB52BA2B2F8F17BC8",
             "heading": "Cloudera CDH | 5.12",
             "tags": [
